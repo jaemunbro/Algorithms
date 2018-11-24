@@ -28,8 +28,6 @@ class UsernameValidator {
     public static final String regularExpression = "(\\D)(\\w+_*)";
 
 
-
-
 }
 
 
