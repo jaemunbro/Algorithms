@@ -5,15 +5,14 @@ package HackerRank.JavaProficiency;
  *
  */
 
-
 import java.util.*;
 
-class Student{
+class Student02{
     private int id;
     private String fname;
     private double cgpa;
 
-    public Student(int id, String fname, double cgpa) {
+    public Student02(int id, String fname, double cgpa) {
         super();
         this.id = id;
         this.fname = fname;
@@ -37,13 +36,13 @@ public class JavaSort{
         Scanner in = new Scanner(System.in);
         int testCases = Integer.parseInt(in.nextLine());
 
-        List<Student> studentList = new ArrayList<Student>();
+        List<Student02> studentList = new ArrayList<Student02>();
         while(testCases>0){
             int id = in.nextInt();
             String fname = in.next();
             double cgpa = in.nextDouble();
 
-            Student st = new Student(id, fname, cgpa);
+            Student02 st = new Student02(id, fname, cgpa);
             studentList.add(st);
 
             testCases--;
@@ -52,15 +51,15 @@ public class JavaSort{
         GpaSort gs = new GpaSort();
         Collections.sort(studentList, gs);
 
-        for(Student st: studentList){
+        for(Student02 st: studentList){
             System.out.println(st.getFname());
         }
     }
 }
 
-class GpaSort implements Comparator<Student>{
+class GpaSort implements Comparator<Student02>{
     @Override
-    public int compare(Student s1, Student s2) {
+    public int compare(Student02 s1, Student02 s2) {
 
         if(s1.getCgpa() < s2.getCgpa()){
             return 1;
