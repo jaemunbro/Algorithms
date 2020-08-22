@@ -1,5 +1,5 @@
 '''
-bfs breath first search
+bfs breadth first search
 큐 활용
 O(N) 시간 소요 / 일반적으로 dfs보다 조금 더 빠르게 동작
 '''
