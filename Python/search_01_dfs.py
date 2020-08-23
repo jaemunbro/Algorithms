@@ -18,11 +18,11 @@ graph = [
 visited = [False] * 9
 
 def dfs(graph, v, visited):
-    # 현재 노드 방문 처리
+    # mark visited node
     visited[v] = True
     print(v, end=' ')
 
-    # 현재 노드와 연결된 다른 노드를 재귀적으로 방문
+    # reculsively visit connected nodes from current node
     for i in graph[v]:
         if not visited[i]:
             dfs(graph, i, visited)

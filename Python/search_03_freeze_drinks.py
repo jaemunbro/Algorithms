@@ -6,14 +6,15 @@ graph = []
 for i in range(n):
     graph.append(list(map(int, input())))
 
+
 def dfs(x, y):
-    # 범위 벗어나면 종료
+    # quit when it's out of range
     if x < 0 or x >= n or y < 0 or y >= m:
         return False
 
     if graph[x][y] == 0:
-        graph[x][y] == 1
-        #상하좌우 모두 재귀
+        graph[x][y] = 1
+        # recursive on every 4 directions
         dfs(x-1, y)
         dfs(x, y-1)
         dfs(x+1, y)
@@ -21,7 +22,7 @@ def dfs(x, y):
         return True
     return False
 
-# 음료수 채우기
+# freeze drinks
 result = 0
 for i in range(n):
     for j in range(m):

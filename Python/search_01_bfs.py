@@ -1,27 +1,9 @@
 '''
 bfs breadth first search
 큐 활용
-O(N) 시간 소요 / 일반적으로 dfs보다 조금 더 빠르게 동작
+O(N) time complexity. Faster than dfs in general.
 '''
 from collections import deque
-
-def bfs(graph, start, visited):
-    queue = deque([start])
-    visited[start] = True
-
-    #큐가 빌 때까지
-    while queue:
-        #큐에서 하나 뽑아서
-        v = queue.popleft()
-        print(v, end=' ')
-
-        # 해당 원소와 연결된, 아직 방문하지 않은 원소 삽입
-        for i in graph[v]:
-            if not visited[i]:
-                queue.append(i)
-                visited[i] = True
-
-
 # 노드 연결 정보 : 2차원 리스트
 graph = [
     [],
@@ -36,5 +18,23 @@ graph = [
 ]
 # 각 노드가 방문된 정보 : 1차원 리스트
 visited = [False] * 9
+
+
+def bfs(graph, start, visited):
+    # put [list] into deque
+    queue = deque([start])
+    visited[start] = True
+
+    # while queue is not empty
+    while queue:
+        # pop one out from queue
+        v = queue.popleft()
+        print(v, end=' ')
+
+        # 해당 원소와 연결된, 아직 방문하지 않은 원소 삽입
+        for i in graph[v]:
+            if not visited[i]:
+                queue.append(i)
+                visited[i] = True
 
 bfs(graph, 1, visited)
