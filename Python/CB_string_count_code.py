@@ -15,6 +15,7 @@ def count_code(str):
 
 '''
 with regex
+but import not allowed
 '''
 # import re
 #
