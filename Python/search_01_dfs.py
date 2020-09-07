@@ -1,8 +1,11 @@
 ''' dfs(depth first search)
-    stack 구조. 재귀 함수로 구현한다.
-    O(N) 시간 소요
+    data strucrue : stack
+    implement with recursive function
+
+    Time Complexity : O(N)
     '''
-# 노드 연결 정보 : 2차원 리스트
+
+# nodes : two dimensinal list
 graph = [
     [],
     [2, 3, 8],
@@ -14,7 +17,7 @@ graph = [
     [2, 6, 8],
     [1, 7]
 ]
-# 각 노드가 방문된 정보 : 1차원 리스트
+# node visited information : one dimesional list
 visited = [False] * 9
 
 def dfs(graph, v, visited):
