@@ -30,3 +30,41 @@ for i in range(n):
             result += 1
 
 print(result)
+
+
+# tried once more
+class Solution02:
+    def dfs(graph, x, y):
+        # mark the node
+        graph[x][y] = 1
+
+        if x+1 <= m-1:
+            if graph[x+1][y] == 0:
+                dfs(graph, x+1, y)
+        if x-1 >= 0:
+            if graph[x-1][y] == 0:
+                dfs(graph, x-1, y)
+        if y+1 <= n-1:
+            if graph[x][y+1] == 0:
+                dfs(graph, x, y+1)
+        if y-1 >= 0:
+            if graph[x][y-1] == 0:
+                dfs(graph, x, y-1)
+
+    result = 0
+    for i in range(m):
+        for j in range(n):
+            if graph[i][j] == 0:
+
+                result += 1
+                # print(graph)
+                dfs(graph, i, j)
+
+
+
+
+
+
+
+
+
