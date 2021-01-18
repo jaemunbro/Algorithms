@@ -61,7 +61,44 @@ class Solution02:
                 dfs(graph, i, j)
 
 
+# Another Try
+graph = [[0, 0, 1, 0, 0],
+         [1, 1, 1, 0, 1],
+         [0, 1, 1, 1, 1]]
 
+result = 0
+def dfs(x, y):
+    # 방문처리
+    graph[x][y] = 1
+    # 상하좌우 탐색
+    # -1, 0
+    # 1, 0
+    # 0, 1
+    # 0, -1
+    print(x, y)
+    if x-1 >= 0:
+        if graph[x-1][y] == 0:
+            dfs(x-1,y)
+    if x+1 < n:
+        if graph[x+1][y] == 0:
+            dfs(x+1,y)
+    if y-1 >= 0:
+        if graph[x][y-1] == 0:
+            dfs(x,y-1)
+    if y+1 < m:
+        if graph[x][y+1] == 0:
+            dfs(x,y+1)
+    # 이동할 곳 있으면 -> stack
+    # 없으면 끝
+
+result = 0
+for i in range(n):
+    for j in range(m):
+        if graph[i][j] == 0:
+            dfs(i,j)
+            result += 1
+
+print(result)
 
 
 
