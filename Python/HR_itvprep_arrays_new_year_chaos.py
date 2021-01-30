@@ -21,10 +21,4 @@ for i in range(t):
             if j > num:
                 sum += 1
 
-
-
-
-
-
-
     print(sum)
